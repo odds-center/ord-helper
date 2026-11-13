@@ -122,12 +122,6 @@ Windows는 유료 코드 서명 인증서가 없고 아직 많이 받지 않은 
 세이브 파일은 읽기만 하고, 백업을 따로 만들어 둡니다(`%APPDATA%\OrdHelper\backups`). 되돌리기 전에도 지금 세이브를 먼저 백업합니다. 프로그램을 지워도 백업은 남습니다.
 </details>
 
-## 📝 알려 드립니다
-
-- 조합식과 유닛 정보는 [TMO.GG 조합도우미](https://tmo.gg/g/ord/build-helper)와 위키를 바탕으로 했습니다. 데이터의 권리는 TMO.GG와 위키 편집자에게 있습니다.
-- 블리자드 엔터테인먼트, TMO.GG와 관계없는 개인 제작 무료 프로그램입니다. Warcraft는 Blizzard Entertainment의 상표입니다.
-- 이 저장소에는 설치 파일과 안내만 올립니다.
-
 ---
 
 <a id="english"></a>
