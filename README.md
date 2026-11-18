@@ -29,9 +29,10 @@
 |---|---|
 | 🔴 **실시간 유닛 세기** | 게임을 하는 동안 내 유닛과 위습을 자동으로 셉니다. 직접 입력할 필요가 없습니다. |
 | ✅ **지금 조합 가능** | 내 유닛으로 지금 바로 만들 수 있는 조합, 1개만 모자란 조합을 위쪽에 보여 줍니다. |
-| ⌨️ **조합 명령어 자동 입력** | 명령어가 있는 유닛(히든·초월·불멸·영원 …)은 버튼을 누르면 게임 채팅에 바로 입력됩니다. |
+| 📋 **조합 명령어 복사** | 명령어가 있는 유닛(히든·초월·불멸·영원 …)은 버튼을 누르면 명령어가 복사됩니다. 게임 채팅에 붙여넣기만 하면 됩니다. |
 | ⭐ **목표 · 추천** | 만들 유닛을 목표로 고르면 남은 재료, 필요한 위습 수, 팔아도 되는 유닛을 알려 줍니다. 이감·방깍 수치도 계산합니다. |
-| 🧩 **추천 템플릿** | 지금 덱에 빠진 역할(스턴·끝딜·방깍 …)을 채울 전설 이상 유닛을 골라 줍니다. |
+| 🧩 **추천 템플릿** | 지금 덱에 빠진 역할(스턴·끝딜·방깍 …)을 채울 전설 이상 유닛을 골라 줍니다. 상위마다 같이 가면 좋은 짝, 필요한 보조딜 수, 라운드별 체크도 알려 줍니다. |
+| 🏆 **클리어 템플릿** | 실제 신·악몽 클리어 기록 수천 판을 바탕으로, 어떤 첫 상위와 조합이 남은 몹(유닛 카운트)을 적게 남기고 깼는지 보여 줍니다. |
 | 🪟 **위젯 · 항상 위** | 게임 위에 띄워 두는 작은 창. 투명도도 조절할 수 있습니다. |
 | 💾 **세이브 백업** | 세이브가 저장될 때마다 자동으로 백업하고, 클리어 횟수·유닛 기록을 보여 줍니다. 디스코드 채널로 보내기도 됩니다. |
 | ⬆️ **자동 업데이트** | 새 버전이 나오면 프로그램 위쪽 버튼 하나로 알아서 바뀝니다. |
@@ -57,7 +58,7 @@ ORD Helper는 **바이러스·악성코드가 없는 안전한 프로그램**입
 
 - 게임 메모리를 **읽기만** 해서 유닛을 셉니다. 게임 메모리에 쓰기, DLL 주입, 후킹은 **하지 않습니다**.
 - 게임 파일과 맵 파일을 **고치지 않습니다**.
-- 게임에 입력하는 것은 **조합 명령어 버튼을 누를 때 채팅 한 줄**뿐입니다. 사람이 누를 때만, 누른 만큼만 입력합니다. 자동 사냥이나 자동 조합 같은 봇 기능은 없습니다.
+- 게임에 아무것도 입력하지 않습니다. 조합 명령어는 **복사만** 하고, 붙여넣기는 직접 합니다. 자동 사냥이나 자동 조합 같은 봇 기능은 없습니다.
 
 **인터넷에 접속하는 경우** (이 두 가지뿐입니다)
 
@@ -72,17 +73,17 @@ ORD Helper는 **바이러스·악성코드가 없는 안전한 프로그램**입
 | 백신 오탐 줄이기 | 실행 파일을 압축(UPX)하지 않고, exe 속성에 제품 정보를 넣어 만듭니다 |
 | 파일 위조 확인 | 릴리즈 파일마다 SHA-256 해시를 공개합니다 (아래 표) |
 
-**v0.6.6 파일 해시 (SHA-256)**
+**v0.7.0 파일 해시 (SHA-256)**
 
 | 파일 | SHA-256 |
 |---|---|
-| `ORD-Helper-Setup-0.6.6.exe` | `86dfcd0800001152ba1a36bd6bced031e0d7581a2b289c340d0b28c49226616e` |
-| `ORD-Helper-0.6.6.zip` | `086490e35be53023efd7390e6e6522df337e377f1aa795339533c193427c6e55` |
+| `ORD-Helper-Setup-0.7.0.exe` | `43cc4999ebbd7d9ada1411e0b1d9935b1999ac9060c0aaa8502340f1a7e5d14a` |
+| `ORD-Helper-0.7.0.zip` | `361ec4aac2913d6d0c01cf735ee866ca94d4f33a9a2278946833af7e274c0e68` |
 
 받은 파일이 이 저장소에서 올린 것과 같은지 직접 확인할 수 있습니다. PowerShell에서:
 
 ```powershell
-Get-FileHash .\ORD-Helper-Setup-0.6.6.exe -Algorithm SHA256
+Get-FileHash .\ORD-Helper-Setup-0.7.0.exe -Algorithm SHA256
 ```
 
 나온 값이 위 표와 같으면 중간에 바뀌지 않은 원본입니다. 새 버전의 해시는 각 [릴리즈](https://github.com/odds-center/ord-helper/releases) 페이지의 파일 옆에 나옵니다.
@@ -132,7 +133,7 @@ Windows는 유료 코드 서명 인증서가 없고 아직 많이 받지 않은 
 
 - Counts your units in real time while you play (read-only memory reading: no memory writes, DLL injection or hooks).
 - Shows which recipes you can build now, which are one material short, and what is left for your goal units.
-- Types combine commands into the in-game chat when you click a button. One click sends one line; there is no bot or auto-play.
+- Copies combine commands to the clipboard so you can paste them into the in-game chat. It never types into the game; there is no bot or auto-play.
 - Includes an always-on-top widget, save backups, and automatic updates.
 - **No viruses or malware.** It collects no personal data. Defender scan: clean. SHA-256 hashes are listed above.
 - Windows 10/11 only. [Download the latest release](https://github.com/odds-center/ord-helper/releases/latest).
